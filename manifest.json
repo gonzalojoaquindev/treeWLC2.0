@@ -1,0 +1,40 @@
+{
+    "name": "Mesh AP tree",
+    "description": "Extensión para interface gráfica de WLC permita vizualizar los hostname de los clientes según las IP ",
+    "version": "1.0",
+    "manifest_version": 3,
+    "author": "Gonzalo Araya",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/radio16.png",
+            "32": "/images/radio32.png",
+            "48": "/images/radio48.png",
+            "128": "/images/radio128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/radio16.png",
+        "32": "/images/radio32.png",
+        "48": "/images/radio48.png",
+        "128": "/images/radio128.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "http://10.16.43.97/screens/apf/mobile_station_list.html",
+            "http://127.0.0.1:5173/",
+            "http://127.0.0.1:5500/index.html",
+            "file:///C:/Users/Gonza/Music/extension/index.html",
+            "file:///C:/Users/Gonza/Downloads/tree/Clients.html"
+        ],
+        "css": [
+            "my-styles.css"
+        ],
+        "js": [
+            "d3.js",
+            "clients.js",
+            "content-script.js",
+            "rederTree.js"
+        ]
+    }]
+}
